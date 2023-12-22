@@ -87,6 +87,8 @@ a {
   display: grid;
   grid-template-rows: 160px auto;
 
+  animation: fade-in, slide-up;
+
   box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   width: 327px;
@@ -238,4 +240,33 @@ a {
 }
 .card__cancel:hover {
   color: #000000;
+}
+
+/* animations */
+@keyframes slide-up {
+  0% {
+    transform: translateY(30%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* utility */
+.animate {
+  animation-fill-mode: both;
+  animation-duration: 1s;
+}
+
+.animate.animate--3s {
+  animation-duration: 3s;
 }
